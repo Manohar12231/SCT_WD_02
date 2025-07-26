@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light-bg: #f3f4f6;
+  --light-primary: #4a90e2;
+  --dark-bg: #1a1b26;
+  --dark-primary: #7aa2f7;
+  --dark-secondary: #ff9e64;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-light-bg;
+  transition: background-color 0.5s ease;
+}
+
+.dark body {
+  @apply bg-dark-bg;
+}
+
+.history-panel::-webkit-scrollbar { width: 6px; }
+.history-panel::-webkit-scrollbar-track { background: transparent; }
+.history-panel::-webkit-scrollbar-thumb { @apply bg-light-primary/50 dark:bg-dark-primary/50 rounded-full; }
+.history-panel::-webkit-scrollbar-thumb:hover { @apply bg-light-primary/70 dark:bg-dark-primary/70; }
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* REMOVED: .digital-text-glow class is no longer here */
+
+.btn-glow-primary:hover { filter: brightness(1.1) drop-shadow(0 0 8px var(--light-primary)); }
+.dark .btn-glow-primary:hover { filter: brightness(1.2) drop-shadow(0 0 10px var(--dark-primary)); }
+
+.btn-glow-secondary:hover { filter: brightness(1.1) drop-shadow(0 0 8px var(--light-secondary)); }
+.dark .btn-glow-secondary:hover { filter: brightness(1.2) drop-shadow(0 0 10px var(--dark-secondary)); }
